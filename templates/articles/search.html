@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+{% for object in object_list %}
+<h1>{{object.title}}</h1>
+<p>{{object.content}}</p>
+{% empty%}
+<p>There is no articles with this search query </p>
+{% endfor%}
+{% endblock content %}
