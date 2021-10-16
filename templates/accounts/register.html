@@ -6,11 +6,10 @@
     <form action="" method="POST">
         {% csrf_token %}
         {{form.as_p }}
-        <button type="submit">Login</button>
     </form>
-    <p> <a href="{% url 'register'%}">Need an account? Please register</a></p>
+    <p><a href="{% url 'login' %}">Already have an account? Please log in</a></p>
 </div>
 {% else %}
-    <p>You're already logged in. Would you like to <a href="{% url 'logout' %}">logout?</a></p>
+    <p>You're already logged  in and can not register. Would you like to <a href="{% url 'logout' %}">logout?</a></p>
 {% endif %}
 {% endblock content %}

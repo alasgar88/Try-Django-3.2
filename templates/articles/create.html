@@ -1,18 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 {% if not created %}
+
 <div style="margin-top:30px">
 <form action="{% url 'create_view' %}" method="POST">
     {% csrf_token %}
-    <div>
-    <input type="text" name="title" id="" placeholder="Your article Title">
-    </div>
-    <div style="margin-top: 10px;">
-    <textarea name="content" id="" cols="30" rows="10" placeholder="Content"></textarea>
-    </div>
-    <div>
-    <button type="submit">Creata article</button>
-    </div>
+    {{form.as_p}}
+     <button type="submit">Creata article</button>
 </form>
 </div>
 {% else %}
