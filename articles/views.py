@@ -9,7 +9,6 @@ from .forms import ArticleForm
 def search_view(request):
 
     query_dict = request.GET.get("q")
-    print(query_dict)
 
     article_list = Article.objects.filter(content__contains=query_dict)
 
@@ -29,7 +28,7 @@ def create_view(request):
     if form.is_valid():
         article_object = form.save()
         # to avoid  sending Post method again and  saving dublicate object after refresh page
-        context['form'] = ArithmeticError()
+        context['form'] = ArticleForm()
         # This variant is for forms.Form type
         # title = form.cleaned_data.get('title')
         # content = form.cleaned_data.get('content')
